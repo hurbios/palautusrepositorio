@@ -6,8 +6,8 @@ from erotus import erotus
 
 logger("aloitetaan")
 
-x = int(input("luku 1: "))
-y = int(input("luku 2: "))
+x = int(input("luku 1: ")) # bugikorjaus
+y = int(input("luku 2: ")) # bugokorjeus
 print(f"{summa(x, y)}")
 print(f"{erotus(x, y)}")
 
