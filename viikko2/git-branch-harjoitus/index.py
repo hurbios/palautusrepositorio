@@ -1,4 +1,4 @@
-# tehdään alussa importit
+# tehdään alussa importit, ja muutosta mainissa
 
 from logger import logger
 from summa import summa
