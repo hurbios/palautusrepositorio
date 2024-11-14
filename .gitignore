@@ -3,3 +3,8 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
+*.log
+report.html
+output.xml
+log.html
+selenium-screenshot*
