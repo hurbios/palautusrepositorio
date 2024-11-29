@@ -56,20 +56,20 @@ class Kayttoliittyma:
 
     def _suorita_komento(self, komento):
         arvo = 0
+        komennot = {
+            Komento.SUMMA: (self._sovelluslogiikka.plus,1),
+            Komento.EROTUS: (self._sovelluslogiikka.miinus,1),
+            Komento.NOLLAUS: (self._sovelluslogiikka.nollaa,0),
+            Komento.KUMOA: (self._sovelluslogiikka.kumoa,0)
+        }
 
         try:
             arvo = int(self._syote_kentta.get())
         except Exception:
             pass
 
-        if komento == Komento.SUMMA:
-            self._sovelluslogiikka.plus(arvo)
-        elif komento == Komento.EROTUS:
-            self._sovelluslogiikka.miinus(arvo)
-        elif komento == Komento.NOLLAUS:
-            self._sovelluslogiikka.nollaa()
-        elif komento == Komento.KUMOA:
-            pass
+        if komento in komennot:
+            komennot[komento][0](*(() if komennot[komento][1] == 0 else (arvo,)))
 
         self._kumoa_painike["state"] = constants.NORMAL
 

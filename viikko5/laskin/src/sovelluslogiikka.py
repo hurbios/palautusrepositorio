@@ -16,3 +16,6 @@ class Sovelluslogiikka:
 
     def arvo(self):
         return self._arvo
+    
+    def kumoa(self):
+        pass
